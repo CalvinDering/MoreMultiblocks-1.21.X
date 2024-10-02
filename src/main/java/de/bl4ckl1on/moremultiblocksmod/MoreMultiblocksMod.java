@@ -1,5 +1,6 @@
 package de.bl4ckl1on.moremultiblocksmod;
 
+import de.bl4ckl1on.moremultiblocksmod.block.ModBlocks;
 import de.bl4ckl1on.moremultiblocksmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -39,6 +40,7 @@ public class MoreMultiblocksMod {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -55,6 +57,11 @@ public class MoreMultiblocksMod {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.ENERGONITE);
             event.accept(ModItems.ZYTHERIUM);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.ENERGONITE_BLOCK);
+            event.accept(ModBlocks.ZYTHERIUM_BLOCK);
         }
     }
 

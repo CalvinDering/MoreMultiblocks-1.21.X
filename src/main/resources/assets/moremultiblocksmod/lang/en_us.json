@@ -1,5 +1,7 @@
 {
   "item.moremultiblocksmod.energonite": "Energonite",
-  "item.moremultiblocksmod.zytherium": "Zytherium"
+  "item.moremultiblocksmod.zytherium": "Zytherium",
+  "block.moremultiblocksmod.energonite_block": "Block of Energonite",
+  "block.moremultiblocksmod.zytherium_block": "Block of Zytherium"
 
 }
