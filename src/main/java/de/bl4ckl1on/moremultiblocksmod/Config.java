@@ -1,4 +1,4 @@
-package de.bl4ckl1on.moremultiblocks;
+package de.bl4ckl1on.moremultiblocksmod;
 
 import java.util.List;
 import java.util.Set;
@@ -14,7 +14,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 
 // An example config class. This is not required, but it's a good idea to have one to keep your config organized.
 // Demonstrates how to use Neo's config APIs
-@EventBusSubscriber(modid = MoreMultiblocks.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = MoreMultiblocksMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class Config
 {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
