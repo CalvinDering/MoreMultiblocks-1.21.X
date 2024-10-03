@@ -3,7 +3,14 @@ package de.bl4ckl1on.moremultiblocksmod;
 import de.bl4ckl1on.moremultiblocksmod.block.ModBlocks;
 import de.bl4ckl1on.moremultiblocksmod.item.ModCreativeModeTabs;
 import de.bl4ckl1on.moremultiblocksmod.item.ModItems;
+import de.bl4ckl1on.moremultiblocksmod.multi.ModMultiblocks;
+import de.bl4ckl1on.moremultiblocksmod.multi.entity.ModMultiblockEntities;
+import de.bl4ckl1on.moremultiblocksmod.screen.ModMenuTypes;
+import de.bl4ckl1on.moremultiblocksmod.screen.block.InfuserMenu;
+import de.bl4ckl1on.moremultiblocksmod.screen.block.InfuserScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -45,6 +52,11 @@ public class MoreMultiblocksMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModMenuTypes.register(modEventBus);
+
+        ModMultiblocks.register(modEventBus);
+        ModMultiblockEntities.register(modEventBus);
+
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -65,6 +77,11 @@ public class MoreMultiblocksMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+        }
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.INFUSER_MENU.get(), InfuserScreen::new);
         }
     }
 }

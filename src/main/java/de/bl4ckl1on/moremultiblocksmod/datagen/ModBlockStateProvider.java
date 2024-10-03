@@ -2,6 +2,7 @@ package de.bl4ckl1on.moremultiblocksmod.datagen;
 
 import de.bl4ckl1on.moremultiblocksmod.MoreMultiblocksMod;
 import de.bl4ckl1on.moremultiblocksmod.block.ModBlocks;
+import de.bl4ckl1on.moremultiblocksmod.multi.ModMultiblocks;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -16,6 +17,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.ENERGONITE_BLOCK);
         blockWithItem(ModBlocks.ZYTHERIUM_BLOCK);
+        blockWithItem(ModBlocks.INFUSER);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

@@ -6,6 +6,8 @@
   "block.moremultiblocksmod.zytherium_block": "Block of Zytherium",
 
   "creativetab.moremultiblocksmod.moremultiblocks_items": "More Multiblock Items",
-  "creativetab.moremultiblocksmod.moremultiblocks_blocks": "More Multiblock Blocks"
+  "creativetab.moremultiblocksmod.moremultiblocks_blocks": "More Multiblock Blocks",
+
+  "menu.title.moremultiblocksmod.infuser_menu": "Infuser"
 
 }
