@@ -3,6 +3,7 @@ package de.bl4ckl1on.moremultiblocksmod.multi;
 import com.google.common.collect.Sets;
 import net.minecraft.core.Vec3i;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.pattern.BlockInWorld;
@@ -34,12 +35,47 @@ public class PlayerBuildMultiblock extends Multiblock {
         this.activationPosition = builder.activationPosition;
     }
 
+    public List<Predicate<BlockState>> getValidStates() {
+        return validStates;
+    }
+
+    public BlockPattern getPatternMatcher() {
+        return this.patternMatcher;
+    }
+
+    public boolean isValid(BlockState state) {
+        return this.validStates.stream().anyMatch(it -> it.test(state));
+    }
+
+    public Pair<Vec3i, BlockState> getController() {
+        return this.controller;
+    }
+
+    public boolean requiresActivation() { return this.requiresActivation; }
+
+    public Optional<Ingredient> getActivationItem() {
+        return this.activationItem;
+    }
+
+    public Optional<Vec3i> getActivationPosition() {
+        return this.activationPosition;
+    }
+
+    public boolean isValidItem(ItemStack stack) {
+        return this.activationItem.map(it -> it.test(stack)).orElse(true);
+    }
+
+    public boolean isIgnoredPosition(Vec3i pos) {
+        return this.ignoredPositions.contains(pos);
+    }
+
+
     public static class Builder {
         private BlockPattern pattern;
         private final Set<Predicate<BlockState>> validStates = new HashSet<>();
         private final Set<Vec3i> ignoredPositions = new HashSet<>();
         private Pair<Vec3i, BlockState> controller;
-        private MultiblockInteraction multiblockInteraction = ($0, $1, $2, $3, $5, $6, $7) -> InteractionResult.PASS;
+        private MultiblockInteraction multiblockInteraction = ($0, $1, $2, $3, $5, $6) -> InteractionResult.PASS;
         private Optional<Ingredient> activationItem = Optional.empty();
         private Optional<Vec3i> activationPosition = Optional.empty();
 

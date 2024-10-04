@@ -12,6 +12,6 @@ import net.minecraft.world.phys.BlockHitResult;
 @FunctionalInterface
 public interface MultiblockInteraction {
 
-    InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result, Vec3i offsetFromMaster);
+    InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult result, Vec3i offsetFromMaster);
 
 }

@@ -2,13 +2,11 @@ package de.bl4ckl1on.moremultiblocksmod.block;
 
 import de.bl4ckl1on.moremultiblocksmod.MoreMultiblocksMod;
 import de.bl4ckl1on.moremultiblocksmod.item.ModItems;
-import de.bl4ckl1on.moremultiblocksmod.multi.Multiblock;
 import de.bl4ckl1on.moremultiblocksmod.multi.block.InfuserMultiblock;
-import de.bl4ckl1on.moremultiblocksmod.multi.entity.InfuserMultiblockEntity;
+import de.bl4ckl1on.moremultiblocksmod.multi.block.MultiblockBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -31,6 +29,13 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f)
                     .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)));
+
+    public static final DeferredBlock<MultiblockBlock> MULTIBLOCK = BLOCKS.register("multiblock",
+            () -> new MultiblockBlock(BlockBehaviour.Properties.of()
+                    .noLootTable()
+                    .dynamicShape()
+                    .noOcclusion()
                     .sound(SoundType.STONE)));
 
     public static final DeferredBlock<InfuserMultiblock> INFUSER = BLOCKS.register("infuser",

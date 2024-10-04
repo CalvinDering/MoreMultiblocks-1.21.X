@@ -11,6 +11,7 @@ import de.bl4ckl1on.moremultiblocksmod.screen.block.InfuserScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.registries.NewRegistryEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -82,6 +83,11 @@ public class MoreMultiblocksMod {
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.INFUSER_MENU.get(), InfuserScreen::new);
+        }
+
+        @SubscribeEvent
+        public static void registerRegistries(NewRegistryEvent event) {
+            event.register(ModMultiblocks.MULTIBLOCK_REGISTRY);
         }
     }
 }

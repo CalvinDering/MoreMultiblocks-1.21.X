@@ -22,7 +22,7 @@ public abstract class Multiblock {
     public MultiblockInteraction getMultiblockInteraction() { return this.multiblockInteraction; }
 
     public static class Builder {
-        private MultiblockInteraction multiblockInteraction = ($0, $1, $2, $3, $5, $6, $7) -> InteractionResult.PASS;
+        private MultiblockInteraction multiblockInteraction = ($0, $1, $2, $3, $5, $6) -> InteractionResult.PASS;
 
         public Builder multiblockInteraction(MultiblockInteraction multiblockInteraction) {
             this.multiblockInteraction = multiblockInteraction;

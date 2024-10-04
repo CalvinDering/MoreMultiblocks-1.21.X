@@ -13,6 +13,13 @@ public class ModMultiblockEntities {
 
     public static final DeferredRegister<BlockEntityType<?>> MULTIBLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MoreMultiblocksMod.MOD_ID);
 
+    public static final Supplier<BlockEntityType<MultiblockBlockEntity>> MULTIBLOCK_BE = MULTIBLOCK_ENTITY_TYPES.register(
+            "multiblock_be",
+            () -> BlockEntityType.Builder.of(
+                    MultiblockBlockEntity::new,
+                    ModBlocks.MULTIBLOCK.get()
+            ).build(null));
+
     public static final Supplier<BlockEntityType<InfuserMultiblockEntity>> INFUSER_BE = MULTIBLOCK_ENTITY_TYPES.register(
             "infuser_be",
             () -> BlockEntityType.Builder.of(
