@@ -57,7 +57,7 @@ public class MultiblockListener {
             if (match == null) { continue; }
 
             final Pair<Vec3i, BlockState> controller = multiblock.getController();
-            final BlockPos controllerPosition = match.getBlock(controller.getKey().getX(), controller.getKey().getY(), controller.getKey().getZ()).getPos();
+            final BlockPos controllerPosition = match.getFrontTopLeft().offset(controller.getKey().getX(), controller.getKey().getY(), controller.getKey().getZ());
 
             List<BlockPos> positions = setPlayerBuildMultiblockBlocks(level, multiblock, match, controllerPosition);
 
@@ -153,7 +153,7 @@ public class MultiblockListener {
             if(match == null) { continue; }
 
             final Pair<Vec3i, BlockState> controller = multiblock.getController();
-            final BlockPos controllerPosition = match.getBlock(controller.getKey().getX(), controller.getKey().getY(), controller.getKey().getZ()).getPos();
+            final BlockPos controllerPosition = match.getFrontTopLeft().offset(controller.getKey().getX(), controller.getKey().getY(), controller.getKey().getZ());
 
             var isValid = new AtomicBoolean(true);
             multiblock.getActivationPosition().ifPresent(activationPosition -> {

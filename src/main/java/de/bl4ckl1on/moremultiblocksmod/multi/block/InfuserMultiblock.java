@@ -35,7 +35,7 @@ public class InfuserMultiblock extends Block implements EntityBlock {
 
     public InfuserMultiblock(BlockBehaviour.Properties properties) {
         super(properties);
-        registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 
     @Nullable
