@@ -50,7 +50,7 @@ public class MultiblockBlockEntity extends BlockEntity {
         }
 
         if(level.isClientSide()) {
-            //ModMessages.sendToServer(new SClientBlockEntityLoadPacket(this.getBlockPos()));
+            this.level.setBlockAndUpdate(this.worldPosition, getBlockState());
         }
     }
 }

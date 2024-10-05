@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -24,11 +25,8 @@ public class ModMultiblocks {
 
     public static final DeferredHolder<Multiblock, PlayerBuildMultiblock> INFUSER = MULTIBLOCKS.register("infuser",
             () -> PlayerBuildMultiblock.Builder.start()
-                    //.aisle("XXX","XXX", "XXX")
-                    //.aisle("XXX","XAX", "XXX")
-                    //.aisle("XXX","XXX", "XXX")
-                    .aisle("X")
-                    .aisle("A")
+                    .aisle("XX", "XX")
+                    .aisle("AA", "AA")
                     .where('X', BlockStatePredicate.forBlock(Blocks.COAL_BLOCK))
                     .where('A', BlockStatePredicate.forBlock(ModBlocks.ENERGONITE_BLOCK.get()))
                     .finish()

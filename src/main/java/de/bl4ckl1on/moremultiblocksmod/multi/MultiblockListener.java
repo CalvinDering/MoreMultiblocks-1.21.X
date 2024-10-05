@@ -7,6 +7,7 @@ import de.bl4ckl1on.moremultiblocksmod.multi.entity.ModMultiblockEntities;
 import de.bl4ckl1on.moremultiblocksmod.multi.module.MultiblockModule;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -32,7 +33,7 @@ public class MultiblockListener {
     @SubscribeEvent
     public static void blockPlace(BlockEvent.EntityPlaceEvent event) {
 
-        if(event.getLevel().isClientSide()) { return; }
+        if(!(event.getEntity() instanceof Player) || event.getLevel().isClientSide()) { return; }
 
         final LevelAccessor level = event.getLevel();
         final BlockPos position = event.getPos();

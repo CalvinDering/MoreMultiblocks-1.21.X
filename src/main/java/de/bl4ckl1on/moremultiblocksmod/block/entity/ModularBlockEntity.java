@@ -1,6 +1,5 @@
 package de.bl4ckl1on.moremultiblocksmod.block.entity;
 
-import cpw.mods.util.Lazy;
 import de.bl4ckl1on.moremultiblocksmod.multi.module.Module;
 import de.bl4ckl1on.moremultiblocksmod.multi.module.ModuleList;
 import net.minecraft.core.BlockPos;
@@ -61,7 +60,7 @@ public class ModularBlockEntity extends TickableBlockEntity {
         if(this.level == null) { return; }
 
         if(this.level.isClientSide()) {
-            //ModMessages.sendToServer(new SClientBlockEntityLoadPacket(this.worldPosition));
+            this.level.setBlockAndUpdate(this.worldPosition, getBlockState());
         }
     }
 

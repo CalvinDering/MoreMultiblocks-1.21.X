@@ -18,8 +18,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.ENERGONITE_BLOCK);
         blockWithItem(ModBlocks.ZYTHERIUM_BLOCK);
-        blockWithItem(ModBlocks.INFUSER);
-        blockWithItem(ModBlocks.MULTIBLOCK);
+
+        simpleBlockWithItem(ModBlocks.INFUSER.get(), new ModelFile.UncheckedModelFile(modLoc("block/infuser")));
+        simpleBlockWithItem(ModBlocks.MULTIBLOCK.get(), new ModelFile.UncheckedModelFile(modLoc("block/multiblock")));
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

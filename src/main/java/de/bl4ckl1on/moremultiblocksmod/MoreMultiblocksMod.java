@@ -6,10 +6,7 @@ import de.bl4ckl1on.moremultiblocksmod.item.ModItems;
 import de.bl4ckl1on.moremultiblocksmod.multi.ModMultiblocks;
 import de.bl4ckl1on.moremultiblocksmod.multi.entity.ModMultiblockEntities;
 import de.bl4ckl1on.moremultiblocksmod.screen.ModMenuTypes;
-import de.bl4ckl1on.moremultiblocksmod.screen.block.InfuserMenu;
 import de.bl4ckl1on.moremultiblocksmod.screen.block.InfuserScreen;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.registries.NewRegistryEvent;
 import org.slf4j.Logger;
@@ -26,7 +23,6 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
